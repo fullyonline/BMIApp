@@ -2,20 +2,15 @@ package com.example.bmiapp.util;
 
 public class Bmi {
     // attributes
-    private Integer height;
+    private Double height;
     private Double weight;
 
-    public void clearValues(){
-        height = null;
-        weight = null;
-    }
-
     // methods
-    public Integer getHeight() {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(Integer height) {
+    public void setHeight(Double height) {
         this.height = height;
     }
 
@@ -28,7 +23,7 @@ public class Bmi {
     }
 
     public Double getBmi() {
-        return getWeight() / (getHeight() * getHeight());
+        return weight / ((height / 100) * (height / 100));
     }
 
     public String getBmiCat(){

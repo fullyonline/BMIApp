@@ -31,8 +31,8 @@ public class BmiActivity extends AppCompatActivity {
         var calculateBmiButton = (Button)findViewById(R.id.buttonCalculateBmi);
         calculateBmiButton.setOnClickListener(view -> {
             Intent intent = new Intent(this, BmiResultActivity.class);
-            intent.putExtra("bmi_height", getEditText(R.id.editTextHeight).getText());
-            intent.putExtra("bmi_weight", getEditText(R.id.editTextWeight).getText());
+            intent.putExtra("bmi_height", Double.parseDouble(getEditText(R.id.editTextHeight).getText().toString()));
+            intent.putExtra("bmi_weight", Double.parseDouble(getEditText(R.id.editTextWeight).getText().toString()));
             startActivity(intent);
         });
     }
