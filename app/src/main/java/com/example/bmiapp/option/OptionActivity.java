@@ -9,10 +9,11 @@ import android.widget.ListView;
 
 import com.example.bmiapp.R;
 import com.example.bmiapp.util.BmiCat;
+import com.example.bmiapp.util.OptionMenu;
 
 import java.util.ArrayList;
 
-public class OptionActivity extends AppCompatActivity {
+public class OptionActivity extends OptionMenu {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,4 +40,8 @@ public class OptionActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public int GetActiveActivityId() {
+        return R.id.menu_general_item_rating;
+    }
 }

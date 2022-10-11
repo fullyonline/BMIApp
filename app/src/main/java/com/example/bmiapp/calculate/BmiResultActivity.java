@@ -1,14 +1,12 @@
 package com.example.bmiapp.calculate;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.bmiapp.R;
 import com.example.bmiapp.util.Bmi;
-
-import java.text.DecimalFormat;
 
 public class BmiResultActivity extends AppCompatActivity {
 

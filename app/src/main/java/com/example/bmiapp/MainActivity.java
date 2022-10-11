@@ -2,13 +2,8 @@ package com.example.bmiapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bmiapp.calculate.BmiActivity;
-import com.example.bmiapp.option.OptionActivity;
 import com.example.bmiapp.util.OptionMenu;
 
 public class MainActivity extends OptionMenu {
