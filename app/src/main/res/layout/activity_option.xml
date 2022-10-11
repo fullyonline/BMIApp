@@ -8,10 +8,23 @@
 
     <ListView
         android:id="@+id/listViewOption"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="407dp"
+        android:layout_height="584dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <TextView
+        android:id="@+id/textViewRatingLegend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating Legend"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.085" />
 </androidx.constraintlayout.widget.ConstraintLayout>
