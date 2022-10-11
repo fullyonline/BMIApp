@@ -8,8 +8,9 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bmiapp.R;
+import com.example.bmiapp.util.OptionMenu;
 
-public class BmiActivity extends AppCompatActivity {
+public class BmiActivity extends OptionMenu {
 
     private EditText getEditText(int id){
         return findViewById(id);
@@ -35,5 +36,10 @@ public class BmiActivity extends AppCompatActivity {
             intent.putExtra("bmi_weight", Double.parseDouble(getEditText(R.id.editTextWeight).getText().toString()));
             startActivity(intent);
         });
+    }
+
+    @Override
+    public int GetActiveActivityId() {
+        return R.id.menu_general_item_calculator;
     }
 }

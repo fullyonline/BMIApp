@@ -9,8 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bmiapp.calculate.BmiActivity;
 import com.example.bmiapp.option.OptionActivity;
+import com.example.bmiapp.util.OptionMenu;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends OptionMenu {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.menu_general, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        switch(menuItem.getItemId()){
-            case R.id.menu_general_item_rating:
-                startActivity(new Intent(this, OptionActivity.class));
-                return true;
-            case R.id.menu_general_item_calculator:
-                startActivity(new Intent(this, BmiActivity.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(menuItem);
-        }
+    public int GetActiveActivityId() {
+        return R.id.menu_general_item_home;
     }
 }
