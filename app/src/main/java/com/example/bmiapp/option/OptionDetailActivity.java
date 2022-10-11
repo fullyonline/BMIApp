@@ -19,11 +19,9 @@ public class OptionDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_option_detail);
 
         Bundle bundle = getIntent().getExtras();
-        Integer pos = bundle.getInt("selection_position");
-        BmiCat [] bmicats = BmiCat.NORMALRANGE.getDeclaringClass().getEnumConstants();
-        if(bmicats[pos] != null){
-            getTextView(R.id.textViewOptionDetailTitel).setText(bmicats[pos].Desc().toString());
-        }
+        Integer index = bundle.getInt("selection_position");
+        getTextView(R.id.textViewOptionDetailTitel).setText(BmiCat.GetDescFromIndex(index));
+        getTextView(R.id.textViewOptionDetailText).setText(BmiCat.GetDetailDesc(index));
     }
 
     private TextView getTextView(int id){
