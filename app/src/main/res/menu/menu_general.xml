@@ -8,7 +8,10 @@
     android:id="@+id/menu_general_item_home"
     android:enabled="false"
     android:title="Home"/>
-     <item
-     android:id="@+id/menu_general_item_rating"
-     android:title="Rating"/>
+    <item
+        android:id="@+id/menu_general_item_rating"
+        android:title="Rating"/>
+    <item
+        android:id="@+id/menu_general_item_calculator"
+        android:title="Calculator"/>
 </menu>
