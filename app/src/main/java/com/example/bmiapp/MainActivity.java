@@ -39,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
         switch(menuItem.getItemId()){
             case R.id.menu_general_item_rating:
                 startActivity(new Intent(this, OptionActivity.class));
+                return true;
             case R.id.menu_general_item_calculator:
                 startActivity(new Intent(this, BmiActivity.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
