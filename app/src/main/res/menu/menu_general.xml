@@ -6,11 +6,11 @@
     tools:context=".MainActivity">
     <item
     android:id="@+id/menu_general_item_home"
-    android:title="Home"/>
+    android:title="@string/option_menu_Item_home"/>
     <item
         android:id="@+id/menu_general_item_rating"
-        android:title="Rating"/>
+        android:title="@string/option_menu_Item_rating"/>
     <item
         android:id="@+id/menu_general_item_calculator"
-        android:title="Calculator"/>
+        android:title="@string/option_menu_Item_calculator"/>
 </menu>

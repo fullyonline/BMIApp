@@ -1,5 +1,7 @@
 package com.example.bmiapp.util;
 
+import com.example.bmiapp.R;
+
 public enum BmiCat {
     UNDERWEIGHTSEVERETHINNESS(Double.valueOf(0), Double.valueOf(16), "Underweight (Severe thinness)"),
     UNDERWEIGHTMODERATETHINNESS(Double.valueOf(16), Double.valueOf(17), "Underweight (Moderate thinness)"),

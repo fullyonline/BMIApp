@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="main_activity_body_mass_index">Body Mass Index</string>
+    <string name="app_name">BMIApp</string>
+    <string name="main_activity_body_mass_index_description">Der Body-Mass-Index (BMI) ist ein Wert, der sich aus der Masse (Gewicht) und der Körpergröße einer Person ableitet. Der BMI ist definiert als das Körpergewicht dividiert durch das Quadrat der Körpergröße und wird in der Einheit kg/m2 ausgedrückt, was sich aus der Masse in Kilogramm und der Körpergröße in Metern ergibt.</string>
+    <string name="main_activity_go_to_bmi_calculator">Gehe zum Rechner</string>
+    <string name="bmi_activity_bmi_calculator_entry">BMI Rechner</string>
+    <string name="bmi_activity_height">Meine Grösse (in cm)</string>
+    <string name="bmi_activity_weight">Mein Gewicht (in kg)</string>
+    <string name="bmi_activity_clear_all_values">ALLE WERTE LEEREN</string>
+    <string name="bmi_activity_calculate_bmi">BMI BERECHNEN</string>
+    <string name="bmi_result_score">Dein BMI</string>
+    <string name="bmi_result_height">Deine Grösse</string>
+    <string name="bmi_result_weight">Dein Gewicht</string>
+    <string name="bmi_result_your_bmi">Dein BMI</string>
+    <string name="option_activity_rating_legend">Rating Legende</string>
+    <string name="option_menu_Item_rating">Rating Legende</string>
+    <string name="option_menu_Item_home">Home Screen</string>
+    <string name="option_menu_Item_calculator">Rechner</string>
+    <string name="bmi_cat_from">Die Kategorie startet bei</string>
+    <string name="bmi_cat_to">und stopt bei</string>
+</resources>
