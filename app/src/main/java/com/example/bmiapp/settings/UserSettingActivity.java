@@ -3,6 +3,8 @@ package com.example.bmiapp.settings;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,26 @@ public class UserSettingActivity extends OptionMenu {
 
         loadDataFromPrefrencesIntoSpinner();
 
+        // spinner
+        /* Events behandeln */
+        var spinner = (Spinner) findViewById(R.id.spinnerUserSettingsUser);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                var entries = loadDataFromPrefrences();
+                var entry = entries.get(position);
+                SharedPreferences prefs = getSharedPreferences("usersettings", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("currentusers", entry);
+                editor.apply();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
         // OnClick
         var newUserBtn = (Button) findViewById(R.id.buttonUserSettingsNewUser);
         newUserBtn.setOnClickListener(view -> {
@@ -37,10 +59,11 @@ public class UserSettingActivity extends OptionMenu {
                     /* OK-Button behandeln */
                     .setPositiveButton(this.getText(R.string.add_user), (dialog, id) -> {
                         EditText editText = dialogView.findViewById(R.id.editTextTextPersonName);
-                        String text = editText.getText().toString();
+                        String user = editText.getText().toString();
 
                         // Persistieren
-                        addDataToPreferences(text);
+                        addNewUserToPreferences(user);
+                        // Neu Laden
                         loadDataFromPrefrencesIntoSpinner();
                     })
 
@@ -54,13 +77,30 @@ public class UserSettingActivity extends OptionMenu {
 
     }
 
-    private void addDataToPreferences(String user){
+    private void addUserToExisting(String user){
         var array = loadDataFromPrefrences();
         array.add(user);
         SharedPreferences prefs = getSharedPreferences("usersettings", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putStringSet("users", new HashSet<>(array));
         editor.apply();
+    }
+
+    private void setCurrentUser(String user){
+        SharedPreferences prefs = getSharedPreferences("usersettings", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("currentusers", user);
+        editor.apply();
+    }
+
+    private String getCurrentUser(){
+        SharedPreferences prefs = getSharedPreferences("usersettings", MODE_PRIVATE);
+        return prefs.getString("currentusers", "");
+    }
+
+    private void addNewUserToPreferences(String user){
+        addUserToExisting(user);
+        setCurrentUser(user);
     }
 
     private ArrayList<String> loadDataFromPrefrences(){
@@ -70,12 +110,17 @@ public class UserSettingActivity extends OptionMenu {
     }
 
     private void loadDataFromPrefrencesIntoSpinner(){
-        // Spinner
         var arrayList = loadDataFromPrefrences();
         var adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, arrayList);
         var spinner = (Spinner) findViewById(R.id.spinnerUserSettingsUser);
         spinner.setAdapter(adapter);
+
+        var currentUser = getCurrentUser();
+        var index = arrayList.indexOf(currentUser);
+        if(index >= 0){
+            spinner.setSelection(index);
+        }
     }
 
     @Override
