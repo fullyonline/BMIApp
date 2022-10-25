@@ -110,12 +110,14 @@ public class UserSettingActivity extends OptionMenu {
     }
 
     private void loadDataFromPrefrencesIntoSpinner(){
+        // set posible selections
         var arrayList = loadDataFromPrefrences();
         var adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, arrayList);
         var spinner = (Spinner) findViewById(R.id.spinnerUserSettingsUser);
         spinner.setAdapter(adapter);
 
+        // set current selection
         var currentUser = getCurrentUser();
         var index = arrayList.indexOf(currentUser);
         if(index >= 0){
