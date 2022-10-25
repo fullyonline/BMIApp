@@ -13,4 +13,7 @@
     <item
         android:id="@+id/menu_general_item_calculator"
         android:title="@string/option_menu_Item_calculator"/>
+    <item
+        android:id="@+id/menu_general_item_setting"
+        android:title="@string/option_menu_Item_settings"/>
 </menu>

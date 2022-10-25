@@ -10,6 +10,7 @@ import com.example.bmiapp.MainActivity;
 import com.example.bmiapp.R;
 import com.example.bmiapp.calculate.BmiActivity;
 import com.example.bmiapp.option.OptionActivity;
+import com.example.bmiapp.settings.SettingsActivity;
 
 public abstract class OptionMenu extends AppCompatActivity {
 
@@ -40,6 +41,9 @@ public abstract class OptionMenu extends AppCompatActivity {
                 return true;
             case R.id.menu_general_item_calculator:
                 startActivity(new Intent(this, BmiActivity.class));
+                return true;
+            case R.id.menu_general_item_setting:
+                startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(menuItem);
